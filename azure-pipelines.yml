@@ -66,19 +66,20 @@ stages:
             inputs:
               action: 'createSecret'
               connectionType: 'azureResourceManager'
-              azureSubscriptionConnection: 'ServicePrincipal_SecretBased_Automatic'
+              azureSubscriptionConnection: 'ServicePrincipal_SingleTenant_1_CertBased'
               azureResourceGroup: 'tailspin-space-game-rg'
               kubernetesCluster: 'tailspinspacegame-3535'
               namespace: 'default'
               secretType: 'dockerRegistry'
               secretName: '$(imagePullSecret)'
               dockerRegistryEndpoint: 'Container Registry Connection'
+
           - task: KubernetesManifest@1
             displayName: Deploy to Kubernetes cluster
             inputs:
               action: 'deploy'
               connectionType: 'azureResourceManager'
-              azureSubscriptionConnection: 'ServicePrincipal_SecretBased_Automatic'
+              azureSubscriptionConnection: 'ServicePrincipal_SingleTenant_1_CertBased'
               azureResourceGroup: 'tailspin-space-game-rg'
               kubernetesCluster: 'tailspinspacegame-3535'
               namespace: 'default'
