@@ -1,3 +1,5 @@
+# follow the following dock - https://learn.microsoft.com/en-us/training/modules/deploy-kubernetes/
+
 trigger: none
 
 variables:
