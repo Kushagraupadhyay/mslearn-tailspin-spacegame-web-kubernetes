@@ -88,8 +88,4 @@ stages:
                 $(RegistryName)/$(leaderboardRepository):$(tag)
               imagePullSecrets: '$(imagePullSecret)'
 
-          - task: AzureWebAppContainer@1
-            inputs:
-             appName: $(WebAppName)
-             azureSubscription: 'Resource Manager - Tailspin - Space Game'
-             imageName: $(RegistryName)/$(webRepository):$(build.buildId)
+         
